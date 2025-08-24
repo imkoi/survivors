@@ -2,6 +2,7 @@
   "dependencies": {
     "com.annulusgames.alchemy": "https://github.com/annulusgames/Alchemy.git?path=/Alchemy/Assets/Alchemy",
     "com.annulusgames.lit-motion": "https://github.com/annulusgames/LitMotion.git?path=src/LitMotion/Assets/LitMotion",
+    "com.unity.addressables": "2.6.0",
     "com.unity.ide.rider": "3.0.36",
     "com.unity.render-pipelines.universal": "17.0.4",
     "com.unity.test-framework": "1.5.1",
