@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+namespace Survivors.Core.UI
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class UIManager : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
