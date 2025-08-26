@@ -1,21 +1,20 @@
-using Unity.Netcode;
+using Fusion;
 using UnityEngine;
 
 namespace Tools.HostMigrationPoC
 {
-    public class Lobby : MonoBehaviour
+    public class Lobby : SimulationBehaviour, IPlayerJoined
     {
-        private void Awake()
+        [SerializeField] private GameObject _playerPrefab;
+        
+        public void PlayerJoined(PlayerRef player)
         {
-            NetworkManager.Singleton.OnClientConnectedCallback += v =>
-            {
-                Debug.Log($"Client[{v}] Connected to server");
-            };
+            Debug.Log("PlayerJoined");
             
-            NetworkManager.Singleton.OnClientDisconnectCallback += v =>
+            if (player == Runner.LocalPlayer)
             {
-                Debug.Log($"Client[{v}] Disconnected from server");
-            };
+                Runner.Spawn(_playerPrefab);
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
-using Unity.Netcode;
+//using Unity.Netcode;
+
+using Fusion;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +23,7 @@ namespace Tools.HostMigrationPoC
         
         private void OnClick()
         {
-            NetworkManager.Singleton.Shutdown();
+            FindAnyObjectByType<NetworkRunner>().Shutdown();
         }
     }
 }

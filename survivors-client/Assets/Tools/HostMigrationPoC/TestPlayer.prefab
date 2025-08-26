@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 662355130306588569}
   - component: {fileID: 7666654594700321199}
   - component: {fileID: 8379014947926342788}
-  - component: {fileID: 4836815217755797445}
+  - component: {fileID: 5245882161513022993}
+  - component: {fileID: 6861030569020335503}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Untagged
@@ -122,8 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57b29d5d81b47479973378145d7d317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
---- !u!114 &4836815217755797445
+--- !u!114 &5245882161513022993
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,19 +132,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 3073479424280902474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1829205671
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 0
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
+  SortKey: 2612853502
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 8379014947926342788}
+  - {fileID: 6861030569020335503}
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &6861030569020335503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3073479424280902474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0

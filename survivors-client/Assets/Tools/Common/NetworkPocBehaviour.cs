@@ -1,5 +1,5 @@
 using Tools.HostMigrationPoC;
-using Unity.Netcode;
+//using Unity.Netcode;
 using UnityEngine;
 
 namespace Tools.Common
@@ -11,16 +11,16 @@ namespace Tools.Common
         
         private void Awake()
         {
-            Instantiate(_lobbyPrefab);
+            //Instantiate(_lobbyPrefab);
             
-            if (!Unity.Multiplayer.Playmode.CurrentPlayer.IsMainEditor)
-            {
-                NetworkManager.Singleton.StartHost();
-            }
-            else
-            {
-                NetworkManager.Singleton.StartClient();
-            }
+            // if (!Unity.Multiplayer.Playmode.CurrentPlayer.IsMainEditor)
+            // {
+            //     NetworkManager.Singleton.StartHost();
+            // }
+            // else
+            // {
+            //     NetworkManager.Singleton.StartClient();
+            // }
         }
     }
 }
