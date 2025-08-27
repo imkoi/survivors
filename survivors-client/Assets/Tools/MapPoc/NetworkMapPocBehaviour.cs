@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tools.Common
 {
-    public class NetworkPocBehaviour : MonoBehaviour
+    public class NetworkMapPocBehaviour : MonoBehaviour
     {
         [SerializeField] 
         private LobbyMapPoc _lobbyPrefab;
