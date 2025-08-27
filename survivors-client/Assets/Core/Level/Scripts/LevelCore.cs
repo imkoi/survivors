@@ -2,7 +2,7 @@
 
 namespace Survivors.Core.Level
 {
-    public class LevelManager : MonoBehaviour
+    public class LevelCore : MonoBehaviour
     {
         
     }

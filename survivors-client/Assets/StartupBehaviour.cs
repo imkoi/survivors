@@ -6,16 +6,16 @@ public class StartupBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject _mainPrefab;
     [SerializeField]
-    private GameObject[] _singletonPrefabs;
+    private GameObject[] _corePrefabs;
 
     private void Awake()
     {
-        StartCoroutine(StartGame());
+        StartCoroutine(ScheduleStartup());
     }
 
-    private IEnumerator StartGame()
+    private IEnumerator ScheduleStartup()
     {
-        foreach (var prefab in _singletonPrefabs)
+        foreach (var prefab in _corePrefabs)
         {
             Instantiate(prefab);
         }

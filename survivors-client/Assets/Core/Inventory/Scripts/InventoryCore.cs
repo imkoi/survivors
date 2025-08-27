@@ -2,7 +2,7 @@
 
 namespace Survivors.Core.Inventory
 {
-    public class InventoryManager : MonoBehaviour
+    public class InventoryCore : MonoBehaviour
     {
         
     }

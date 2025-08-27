@@ -2,7 +2,7 @@
 
 namespace Survivors.Core.Enemy
 {
-    public class EnemyManager : MonoBehaviour
+    public class EnemyCore : MonoBehaviour
     {
         
     }

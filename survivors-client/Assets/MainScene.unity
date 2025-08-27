@@ -470,8 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fcbaaca29968e4bae97613c878acc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainPrefab: {fileID: 0}
-  _singletonPrefabs:
+  _mainPrefab: {fileID: 6092096680101360146, guid: 9d7aa974415c34c468ad26ad22b5e425, type: 3}
+  _corePrefabs:
   - {fileID: 5363136395760839461, guid: 90d08f3f45ab8744fa39640125cb68f2, type: 3}
   - {fileID: 7617880842544565727, guid: 94b7c935896861a4889247ae4bb3d7fd, type: 3}
   - {fileID: 147552848071763289, guid: 3855d663be11ed94fb3e2513ed867774, type: 3}

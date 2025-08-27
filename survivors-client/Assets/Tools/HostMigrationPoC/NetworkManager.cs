@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Fusion;
+using Fusion.Photon.Realtime;
 using UnityEngine;
 
 public class NetworkManager : MonoBehaviour
@@ -8,15 +10,16 @@ public class NetworkManager : MonoBehaviour
     
     void Start()
     {
-        _networkEvents.OnConnectedToServer.AddListener(nr =>
-        {
-            Debug.Log($"Connected to server {nr.LobbyInfo.Name}");
-        });
-        
         _networkRunner.StartGame(new StartGameArgs
         {
-            GameMode = GameMode.Shared,
-            //ClientTickRate = 64, ClientSendRate = 32, ServerTickRate = 64, ServerSendRate = 32
+            SessionName = "Koi Session",
+            SessionProperties = new Dictionary<string, SessionProperty>(),
+            CustomLobbyName = "Koi Lobby",
+            EnableClientSessionCreation = true,
+            PlayerCount = 32,
+            IsOpen = true,
+            IsVisible = true,
+            MatchmakingMode = MatchmakingMode.SerialMatching,
         });
         
         

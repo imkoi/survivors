@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Survivors.Core.UI
 {
-    public class UIManager : MonoBehaviour
+    public class UICore : MonoBehaviour
     {
     }
 }

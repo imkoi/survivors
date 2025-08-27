@@ -2,7 +2,7 @@
 
 namespace Survivors.Core.Player
 {
-    public class PlayerManager : MonoBehaviour
+    public class PlayerCore : MonoBehaviour
     {
         
     }
