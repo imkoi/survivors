@@ -1,9 +1,8 @@
-using System;
 using Fusion;
-//using Unity.Netcode;
 using UnityEngine;
+//using Unity.Netcode;
 
-namespace Tools.HostMigrationPoC
+namespace Tools.MapPoc
 {
     public class TestPlayerMapPoc : NetworkBehaviour
     {
