@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tools.HostMigrationPoC
+namespace Tools.MapPoc
 {
     public class TestCanvasMapPoc : MonoBehaviour
     {
