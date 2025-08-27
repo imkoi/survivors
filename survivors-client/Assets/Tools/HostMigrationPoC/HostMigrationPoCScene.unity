@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainPrefab: {fileID: 7202235448384015215, guid: c26f91c0b47ffa447b36fd8f00176846, type: 3}
-  _singletonPrefabs:
+  _corePrefabs:
   - {fileID: 3900445546257108747, guid: cf809702b25dcdf4f9e565918baee4a5, type: 3}
 --- !u!1 &2093146721
 GameObject:
