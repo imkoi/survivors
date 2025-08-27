@@ -7,7 +7,7 @@ namespace Tools.Common
     public class NetworkPocBehaviour : MonoBehaviour
     {
         [SerializeField] 
-        private LobbyMapPoc _lobbyPrefab;
+        private Lobby _lobbyPrefab;
         
         private void Awake()
         {
@@ -22,5 +22,9 @@ namespace Tools.Common
             //     NetworkManager.Singleton.StartClient();
             // }
         }
+    }
+
+    internal class LobbyPoc
+    {
     }
 }
