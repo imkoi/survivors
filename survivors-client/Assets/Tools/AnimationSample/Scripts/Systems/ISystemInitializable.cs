@@ -1,4 +1,4 @@
-using Ecs;
+using Secs;
 
 namespace Common.Systems
 {

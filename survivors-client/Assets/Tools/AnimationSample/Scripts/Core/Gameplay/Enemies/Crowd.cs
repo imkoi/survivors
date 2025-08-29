@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using DefaultNamespace;
-using Ecs;
+using Secs;
 using UnityEngine;
 
 namespace Core.Gameplay.Enemies

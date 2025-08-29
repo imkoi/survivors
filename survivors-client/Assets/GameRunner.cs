@@ -11,7 +11,7 @@ namespace Survivors
     {
         [SerializeField] private NetworkRunner _networkRunner;
         [SerializeField] private LoadingStep _loading;
-        
+
         private void Awake()
         {
             _networkRunner.StartGame(new StartGameArgs
@@ -25,14 +25,14 @@ namespace Survivors
                 IsVisible = true,
                 MatchmakingMode = MatchmakingMode.SerialMatching,
             });
-            
+
             //_networkRunner.
         }
 
         private IEnumerator StartGame()
         {
             yield return StartCoroutine(_loading.Schedule());
-            
+
             Debug.Log("game loaded");
         }
     }

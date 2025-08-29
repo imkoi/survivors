@@ -1,7 +1,7 @@
 using Common.Systems;
 using Core.Gameplay;
 using Core.Gameplay.Players;
-using Ecs;
+using Secs;
 
 [assembly:RegisterSystem(typeof(PlayerRenderSystem), typeof(GameplayContext))]
 

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Common.Systems;
-using Ecs;
+using Secs;
 using UnityEngine;
 
 namespace DefaultNamespace

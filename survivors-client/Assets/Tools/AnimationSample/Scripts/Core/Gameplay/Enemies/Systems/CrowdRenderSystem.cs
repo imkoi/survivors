@@ -1,7 +1,7 @@
 using Common.Systems;
 using Core.Gameplay;
 using Core.Gameplay.Enemies;
-using Ecs;
+using Secs;
 
 [assembly:RegisterSystem(typeof(CrowdRenderSystem), typeof(GameplayContext))]
 
