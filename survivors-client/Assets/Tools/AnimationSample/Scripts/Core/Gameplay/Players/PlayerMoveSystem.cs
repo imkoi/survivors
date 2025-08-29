@@ -3,8 +3,6 @@ using Core.Gameplay;
 using Core.Gameplay.Players;
 using Secs;
 
-[assembly:RegisterSystem(typeof(PlayerMoveSystem), typeof(GameplayContext))]
-
 namespace Core.Gameplay.Players
 {
     public class PlayerMoveSystem : ISystemExecutable

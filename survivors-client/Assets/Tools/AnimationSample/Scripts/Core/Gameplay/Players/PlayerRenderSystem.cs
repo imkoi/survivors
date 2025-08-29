@@ -3,8 +3,6 @@ using Core.Gameplay;
 using Core.Gameplay.Players;
 using Secs;
 
-[assembly:RegisterSystem(typeof(PlayerRenderSystem), typeof(GameplayContext))]
-
 namespace Core.Gameplay.Players
 {
     public class PlayerRenderSystem : ISystemExecutable

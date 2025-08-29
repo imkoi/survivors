@@ -3,8 +3,6 @@ using Core.Gameplay;
 using Core.Gameplay.Enemies;
 using Secs;
 
-[assembly:RegisterSystem(typeof(CrowdSpawnSystem), typeof(GameplayContext))]
-
 namespace Core.Gameplay.Enemies
 {
     public class CrowdSpawnSystem : ISystemExecutable

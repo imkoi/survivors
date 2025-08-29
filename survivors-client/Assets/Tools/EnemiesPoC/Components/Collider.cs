@@ -1,7 +1,7 @@
 namespace Tools.HostMigrationPoC.Components
 {
-    public struct EnemySpawnRequest
+    public struct Collider
     {
-        
+        public float Radius;
     }
 }
