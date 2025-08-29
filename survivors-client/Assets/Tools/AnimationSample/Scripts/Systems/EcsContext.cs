@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Common.Systems;
 using Secs;
+using Tools.AnimationSample.Scripts.Systems;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -34,11 +36,11 @@ namespace DefaultNamespace
             _contextHolders = new Dictionary<Type, EcsHolder>();
             _holders = new List<EcsHolder>();
             
-            foreach (var contextType in SystemLocator.GetContextTypes())
+            foreach (var pair in SystemLocator.GetSystemRegistries())
             {
-                var handler = new EcsHolder(contextType);
+                var handler = new EcsHolder(pair.Key, pair.Value);
                 
-                _contextHolders.Add(contextType, handler);
+                _contextHolders.Add(pair.Key, handler);
                 _holders.Add(handler);
             }
         }
@@ -75,44 +77,43 @@ namespace DefaultNamespace
 
             private Registry _registry;
 
-            private Type[] _systemTypes;
-
             private List<object> _systems;
             private List<ISystemInitializable> _systemInitializables;
             private List<ISystemExecutable> _systemExecutables;
             private List<ISystemDisposable> _systemDisposables;
 
-            public EcsHolder(Type contextType)
+            public EcsHolder(Type contextType, List<SystemRegistryBase> systemRegistryBases)
             {
+                var systemsCount = systemRegistryBases.Sum(sr => sr.Count);
+                
                 _registry = new Registry();
+                _systems = new List<object>(systemsCount);
+                _systemInitializables = new List<ISystemInitializable>(systemsCount / 4);
+                _systemExecutables = new List<ISystemExecutable>(systemsCount / 4);
+                _systemDisposables = new List<ISystemDisposable>(systemsCount / 4);
 
-                _systemTypes = SystemLocator.GetSystemTypes(contextType);
-                _systems = new List<object>(_systemTypes.Length);
-
-                _systemInitializables = new List<ISystemInitializable>(_systemTypes.Length / 4);
-                _systemExecutables = new List<ISystemExecutable>(_systemTypes.Length / 4);
-                _systemDisposables = new List<ISystemDisposable>(_systemTypes.Length / 4);
-
-                foreach (var systemType in _systemTypes)
+                foreach (var systemRegistry in systemRegistryBases)
                 {
-                    var systemConstructor = systemType.GetConstructor(Type.EmptyTypes);
-                    var system = systemConstructor.Invoke(new object[0]);
-
-                    _systems.Add(system);
-
-                    if (system is ISystemInitializable initializable)
+                    foreach (var systemFactory in systemRegistry.GetSystemFactories())
                     {
-                        _systemInitializables.Add(initializable);
-                    }
+                        var system = systemFactory.Invoke();
+                        
+                        _systems.Add(system);
+                        
+                        if (system is ISystemInitializable initializable)
+                        {
+                            _systemInitializables.Add(initializable);
+                        }
 
-                    if (system is ISystemExecutable executable)
-                    {
-                        _systemExecutables.Add(executable);
-                    }
+                        if (system is ISystemExecutable executable)
+                        {
+                            _systemExecutables.Add(executable);
+                        }
 
-                    if (system is ISystemDisposable disposable)
-                    {
-                        _systemDisposables.Add(disposable);
+                        if (system is ISystemDisposable disposable)
+                        {
+                            _systemDisposables.Add(disposable);
+                        }
                     }
                 }
             }

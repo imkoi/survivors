@@ -1,5 +1,4 @@
 using Common.Systems;
-using Core.Gameplay;
 using Secs;
 using Tools.HostMigrationPoC.Components;
 using UnityEngine;
@@ -18,6 +17,8 @@ namespace Tools.HostMigrationPoC.Systems
                 {
                     var enemyEntity = r.CreateEntity();
                     r.AddComponent(enemyEntity, new Enemy());
+                    r.AddComponent(enemyEntity, new Health());
+                    r.AddComponent(enemyEntity, new Velocity());
                     r.AddComponent(enemyEntity, new Position());
                     r.AddComponent(enemyEntity, new Rotation());
                     r.AddComponent(enemyEntity, new Scale());

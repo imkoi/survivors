@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Tools.HostMigrationPoC.Systems
 {
-    public class MoveSystem : ISystemInitializable, ISystemExecutable
+    public class EnemyMoveSystem : ISystemInitializable, ISystemExecutable
     {
         private static Registry.EachMutable<Enemy, Position, Velocity> _enemyMove = Move;
         
@@ -26,18 +26,16 @@ namespace Tools.HostMigrationPoC.Systems
         
         private static void Move(Registry r, ref Enemy enemy, ref Position pos, ref Velocity vel)
         {
-            bool found = false;
-            Vector2 closest = default;
-            float minDistSq = float.PositiveInfinity;
+            var found = false;
+            var closest = default(Vector2);
+            var minDistSq = float.PositiveInfinity;
 
-            foreach (var (refPlayer, refPlayerPos, refPlayerVel) in r.Each<Player, Position, Velocity>())
+            foreach (var (refPlayerPos, _, _) in r.Each<Position, Player, Velocity>())
             {
-                ref var player = ref refPlayer.Value;
                 ref var playerPos = ref refPlayerPos.Value;
-                ref var playerVel = ref refPlayerVel.Value;
                 
-                Vector2 toPlayer = playerPos.Value - pos.Value;
-                float distSq = toPlayer.x * toPlayer.x + toPlayer.y * toPlayer.y;
+                var toPlayer = playerPos.Value - pos.Value;
+                var distSq = toPlayer.x * toPlayer.x + toPlayer.y * toPlayer.y;
 
                 if (distSq < minDistSq)
                 {
@@ -52,8 +50,9 @@ namespace Tools.HostMigrationPoC.Systems
                 return;
             }
 
-            Vector2 delta = closest - pos.Value;
-            float distSq2 = delta.x * delta.x + delta.y * delta.y;
+            var delta = closest - pos.Value;
+            var distSq2 = delta.x * delta.x + delta.y * delta.y;
+            
             if (distSq2 > 1e-12f)
             {
                 float speed = vel.Value.sqrMagnitude; // длина текущей скорости

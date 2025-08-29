@@ -32,8 +32,11 @@ namespace Tools.HostMigrationPoC.Systems
                     
                     batch.Matrices[batch.Size - 1] = mat;
                 }
-                
-                Graphics.DrawMeshInstanced(batch.QuadMesh, 0, batch.QuadMaterial, batch.Matrices, batch.Size);
+
+                if (batch.Size > 0)
+                {
+                    Graphics.DrawMeshInstanced(batch.QuadMesh, 0, batch.QuadMaterial, batch.Matrices, batch.Size);
+                }
             });
         }
     }

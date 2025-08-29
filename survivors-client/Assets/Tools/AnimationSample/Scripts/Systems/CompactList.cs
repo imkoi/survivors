@@ -1,4 +1,5 @@
 using System;
+using Tools.AnimationSample.Scripts.Systems;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -38,6 +39,15 @@ namespace DefaultNamespace
             }
             
             _size--;
+        }
+
+        public SystemRegistryBase[] ToArray()
+        {
+            var array = new SystemRegistryBase[_size];
+            
+            Array.Copy(_array, 0, array, 0, _size);
+            
+            return array;
         }
     }
 }

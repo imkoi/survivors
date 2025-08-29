@@ -18,7 +18,14 @@ namespace Tools.HostMigrationPoC
         // private 
         
         private Registry _registry;
-        
+
+        public override void Spawned()
+        {
+            Debug.Log("EnemiesDirector spawned");
+            
+            base.Spawned();
+        }
+
         private void Start()
         {
             EcsContext.TryGetRegistry(typeof(GameplayContext), out _registry);
