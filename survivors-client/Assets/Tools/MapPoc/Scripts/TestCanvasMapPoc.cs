@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tools.MapPoc
+namespace Tools.MapPoc.Scripts
 {
     public class TestCanvasMapPoc : MonoBehaviour
     {

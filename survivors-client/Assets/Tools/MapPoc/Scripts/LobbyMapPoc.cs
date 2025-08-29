@@ -1,17 +1,17 @@
 using Fusion;
 using UnityEngine;
 
-namespace Tools.HostMigrationPoC
+namespace Tools.MapPoc.Scripts
 {
     public class LobbyMapPoc : SimulationBehaviour, IPlayerJoined
     {
         [SerializeField] private GameObject _playerPrefab;
         
-        public void PlayerJoined(PlayerRef player)
+        public void PlayerJoined(PlayerRef playerRef)
         {
-            Debug.Log("PlayerJoined");
+            Debug.Log($"[LobbyMapPoc][PlayerJoined] playerRef={playerRef.PlayerId}");
             
-            if (player == Runner.LocalPlayer)
+            if (playerRef == Runner.LocalPlayer)
             {
                 Runner.Spawn(_playerPrefab);
             }

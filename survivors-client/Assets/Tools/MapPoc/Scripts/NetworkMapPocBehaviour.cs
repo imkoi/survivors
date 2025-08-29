@@ -1,8 +1,6 @@
-using Tools.HostMigrationPoC;
-//using Unity.Netcode;
 using UnityEngine;
 
-namespace Tools.Common
+namespace Tools.MapPoc.Scripts
 {
     public class NetworkMapPocBehaviour : MonoBehaviour
     {

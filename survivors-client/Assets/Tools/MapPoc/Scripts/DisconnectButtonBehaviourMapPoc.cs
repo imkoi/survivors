@@ -4,7 +4,7 @@ using Fusion;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Tools.HostMigrationPoC
+namespace Tools.MapPoc.Scripts
 {
     public class DisconnectButtonBehaviourMapPoc : MonoBehaviour
     {
