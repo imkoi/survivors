@@ -1,5 +1,5 @@
 using Common.Systems;
-using Ecs;
+using Secs;
 using Tools.HostMigrationPoC.Components;
 
 namespace Tools.HostMigrationPoC.Systems

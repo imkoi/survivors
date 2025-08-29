@@ -1,6 +1,6 @@
 using Common.Systems;
 using Core.Gameplay;
-using Ecs;
+using Secs;
 using Tools.HostMigrationPoC.Components;
 using Tools.HostMigrationPoC.Systems;
 using UnityEngine;
