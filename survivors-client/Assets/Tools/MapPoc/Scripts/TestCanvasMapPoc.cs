@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Tools.HostMigrationPoC
+namespace Tools.MapPoc.Scripts
 {
-    public class TestCanvas : MonoBehaviour
+    public class TestCanvasMapPoc : MonoBehaviour
     {
         [SerializeField] 
         private GameObject _playerPrefab;

@@ -1,13 +1,11 @@
-using Tools.HostMigrationPoC;
-//using Unity.Netcode;
 using UnityEngine;
 
-namespace Tools.Common
+namespace Tools.MapPoc.Scripts
 {
-    public class NetworkPocBehaviour : MonoBehaviour
+    public class NetworkMapPocBehaviour : MonoBehaviour
     {
         [SerializeField] 
-        private Lobby _lobbyPrefab;
+        private LobbyMapPoc _lobbyPrefab;
         
         private void Awake()
         {
@@ -22,9 +20,5 @@ namespace Tools.Common
             //     NetworkManager.Singleton.StartClient();
             // }
         }
-    }
-
-    internal class LobbyPoc
-    {
     }
 }
